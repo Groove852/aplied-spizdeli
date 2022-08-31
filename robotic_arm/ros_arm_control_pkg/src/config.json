@@ -1,0 +1,5 @@
+{
+	"input_server_port":9090,
+	"ang_address":"192.168.0.2",
+	"ang_port":9090
+}

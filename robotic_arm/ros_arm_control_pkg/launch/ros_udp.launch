@@ -1,0 +1,6 @@
+<launch>
+	<node name="ros_udp" pkg="ros_arm_control_pkg" type="ros_master_udp.py" output = "screen"/>
+	<include file="$(find angle_arm_model)/launch/model_ang.launch"/>
+	<node name="control_arm" pkg="ros_arm_control_pkg" type="main_arm_control.py" output = "screen"/>
+	<node name="from_to_board" pkg="ros_arm_control_pkg" type="to_and_from_board.py" output = "screen"/>
+</launch>

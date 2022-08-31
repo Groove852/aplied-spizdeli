@@ -1,0 +1,17 @@
+<launch>
+	<group ns="/angle_robot">
+		<param name="tf_prefix" value="3"/>
+
+		<param name="/angle_robot/robot_description" command="$(find xacro)/xacro --inorder '$(find angle_arm_model)/urdf/angle_model.urdf'"/>
+
+		<node name="robot_state_publisher3" pkg="robot_state_publisher" type="robot_state_publisher" output = "screen"/>
+	
+		<node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher3">
+			<param name="/use_gui" value="true"/>
+		</node>
+	</group>
+
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find angle_arm_model)/rviz/rviz.rviz"/>
+
+</launch>
+
